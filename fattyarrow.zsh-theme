@@ -27,9 +27,9 @@ function git_indicator {
     git rev-parse >& /dev/null
     if [[ $? -eq 0 ]] then
         if [[ -n "$(git status --porcelain)" ]] then
-            psvar[4]=' git: '`git rev-parse --abbrev-ref HEAD`'*'
+            psvar[4]=' git: '`git rev-parse --abbrev-ref HEAD 2> /dev/null`'*'
         else
-            psvar[4]=' git: '`git rev-parse --abbrev-ref HEAD`
+            psvar[4]=' git: '`git rev-parse --abbrev-ref HEAD 2> /dev/null`
         fi
     else
         psvar[4]=''
