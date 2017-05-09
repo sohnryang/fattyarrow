@@ -1,0 +1,2 @@
+# fattyarrow
+A zsh theme
