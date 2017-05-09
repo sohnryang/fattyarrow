@@ -26,7 +26,11 @@ add-zsh-hook precmd last_cmd_indicator
 function git_indicator {
     git rev-parse >& /dev/null
     if [[ $? -eq 0 ]] then
-        psvar[4]=' git: '`git rev-parse --abbrev-ref HEAD`
+        if [[ -n "$(git status --porcelain)" ]] then
+            psvar[4]=' git: '`git rev-parse --abbrev-ref HEAD`'*'
+        else
+            psvar[4]=' git: '`git rev-parse --abbrev-ref HEAD`
+        fi
     else
         psvar[4]=''
     fi
