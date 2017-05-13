@@ -46,7 +46,16 @@ function virtenv_indicator {
 }
 add-zsh-hook precmd virtenv_indicator
 
+function nvm_indicator {
+    if [[ -z $NVM_DIR ]] then
+        psvar[6]=''
+    else
+        psvar[6]=' nvm: '`nvm current 2> /dev/null`
+    fi
+}
+add-zsh-hook precmd nvm_indicator
+
 PROMPT="
-%{$fg[blue]%}%~%{$reset_color%}%{$fg[magenta]%}%(1V.%1v.)%{$fg[red]%}%(2V.%2v.)%(3V.%3v.)%{$fg[cyan]%}%(4V.%4v.)%{$fg[yellow]%}%(5V.%5v.)
+%{$fg[blue]%}%~%{$reset_color%}%{$fg[magenta]%}%(1V.%1v.)%{$fg[red]%}%(2V.%2v.)%(3V.%3v.)%{$fg[cyan]%}%(4V.%4v.)%{$fg[yellow]%}%(5V.%5v.)%{$fg[green]%}%(6V.%6v.)
 %{$fg[yellow]%}=> %{$reset_color%}"
 
