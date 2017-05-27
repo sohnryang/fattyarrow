@@ -50,7 +50,7 @@ function nvm_indicator {
     if [[ -z $NVM_DIR ]] then
         psvar[6]=''
     else
-        psvar[6]=' nvm: '`nvm current 2> /dev/null`
+        psvar[6]=' nvm: '`node -v 2> /dev/null`
     fi
 }
 add-zsh-hook precmd nvm_indicator
