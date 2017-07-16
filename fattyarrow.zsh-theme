@@ -1,4 +1,5 @@
 export VIRTUAL_ENV_DISABLE_PROMPT=yes
+autoload -U add-zsh-hook
 
 function time_indicator {
     psvar[1]=' time: '`date +"%T"`
