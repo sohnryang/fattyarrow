@@ -12,7 +12,7 @@ A zsh theme
 ## How-to-install
 1. Run this command.
 ```
-curl https://raw.githubusercontent.com/sohnryang/fattyarrow/master/fattyarrow.zsh-theme > ~/.oh-my-zsh/themes/fattyarrow.zsh-theme
+curl https://raw.githubusercontent.com/sohnryang/fattyarrow/master/fattyarrow.zsh-theme > $ZSH_CUSTOM/themes/fattyarrow.zsh-theme
 ```
 2. Set your `$ZSH_THEME` to `fattyarrow`.
 3. Enjoy!
